@@ -27,7 +27,9 @@ class Matcher {
         if urlString.urlValue?.scheme != candidate.urlValue?.scheme {
             return nil
         }
-        return _match(_stringPathComponents(from: urlString), with: candidate)
+        var result = _match(_stringPathComponents(from: urlString), with: candidate)
+        result?.url = url
+        return result
     }
 
     private func _match(_ pathComponents: [String], with candidate: String) -> RouteMatchResult? {

@@ -71,4 +71,10 @@ extension Float: RouteMatchResultValueType {
 public struct RouteMatchResult {
     public let pattern: String
     public let values: [String: Any]
+    internal(set) public var url: URL!
+
+    init(pattern: String, values: [String: Any]) {
+        self.pattern = pattern
+        self.values = values
+    }
 }

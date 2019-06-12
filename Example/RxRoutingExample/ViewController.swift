@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         RxRouting.instance
-            .register("rxroutingexample://hello/users/%/%/%>", Int.self, String.self, Bool.self)
+            .register("rxroutingexample://hello/users/<foo:int>/<bar>/<sexy:bool>")
             .debug("//hello/ [1]")
             .subscribe(onNext: { [weak self] _ in
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
