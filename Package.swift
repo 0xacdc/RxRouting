@@ -4,11 +4,10 @@ import PackageDescription
 let package = Package(
     name: "RxRouting",
     products: [
-        .library(name: "RxRouting", targets: ["RxRouting", "RxRoutingTests"])
+        .library(name: "RxRouting", targets: ["RxRouting"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "5.0.1")),
-        .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "8.0.1"))
+        .package(url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "5.0.0"))
     ],
     targets: [
         .target(
@@ -19,15 +18,6 @@ let package = Package(
             ],
             path: "Sources",
             exclude: [ "Example", "RxRoutingTests" ]
-        ),
-        .testTarget(
-            name: "RxRoutingTests",
-            dependencies: [
-                "RxSwift",
-                "Nimble"
-
-            ],
-            path: "RxRoutingTests"
         )
     ]
 )
