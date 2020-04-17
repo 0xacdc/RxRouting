@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 import PackageDescription
 
 let package = Package(
@@ -14,10 +14,9 @@ let package = Package(
             name: "RxRouting",
             dependencies: [
                 "RxSwift"
-
             ],
-            path: "Sources",
-            exclude: [ "Example", "RxRoutingTests" ]
+            path: "Sources"
         )
-    ]
+    ],
+    swiftLanguageVersions: [ .v5 ]
 )
