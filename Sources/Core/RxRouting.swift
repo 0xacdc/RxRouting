@@ -86,4 +86,8 @@ extension RxRouting {
             return true
         }.isEmpty
     }
+
+    public func canHandle(url: URL) -> Bool {
+        return !_routes.filter { _matcher.match(url: url, from: $0.url) != nil }.isEmpty
+    }
 }
